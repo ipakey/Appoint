@@ -1,0 +1,144 @@
+/* ! Global Settings */
+
+:root {
+    --cream: hsla(66, 68%, 89%, 1);
+    --xanthous: rgba(255, 188, 66, 1);
+    --raspberry: rgba(216, 17, 89, 1);
+    --light-green: rgba(129, 233, 121, 1);
+    --fern-green: hsla(87, 27%, 37%, 1);
+    --english-violet: hsla(308, 22%, 26%, 0.8);
+    --plum-web: rgba(232, 153, 220, 1);
+    --desert-sand: hsla(27, 56%, 76%, 1);
+
+    --dim-gray: hsla(268, 7%, 45%, 1);
+    --ice-blue: rgba(157, 247, 229, 1);
+    --working-blue: rgb(95, 155, 186, 0.7);
+    --dark-blue: rgb(9, 89, 129);
+
+    --clr-red: var(--raspberry);
+    --clr-green: var(--light-green);
+    --clr-amber: var(--xanthous);
+
+    --clr-background: var(--cream);
+    --clr-text: var(--fern-green);
+    --clr-text-op: var(--clr-light-green);
+    --clr-lowlight: var(--english-violet);
+    --clr-highlight: var(--plum-web);
+    --clr-darkest: var(--dark-blue);
+    --clr-darker: var(--clr-working-blue);
+    --clr-dark: var(--ice-blue);
+
+
+    --fnt-titles: 'Merienda', cursive;
+    --fnt-text: 'Dancing Script', cursive;
+    --fnt-hightlight1: 'Amatic SC', cursive;
+    --fnt-hightlight2: 'Jost', sa--fnt-hightlight;
+
+    font-size: 24px;
+    height: 100%;
+    --offset: 80%;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--clr-background);
+    color: var(--clr-text);
+}
+
+
+/* ! Page Parts */
+
+body {
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    color: var(--clr-highlight);
+    background-color: var(--clr-dark);
+
+}
+
+title {
+    font-family: var(--fnt-titles);
+    color: var(--plum-web);
+    font-size: 2rem;
+
+}
+
+h1 {
+    font-size: 2rem;
+    color: inherit;
+    background-color: inherit;
+    margin: auto;
+}
+
+h4 {
+    font-size: 0.5rem;
+    color: inherit;
+    background-color: inherit;
+    vertical-align: baseline;
+}
+
+footer {
+    position: sticky;
+    top: 95%
+}
+
+main {
+
+    border: 3px solid var(--clr-dark);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 1rem;
+    margin-inline: auto;
+    padding: 1rem;
+    width: min(60rem, 100%);
+}
+
+
+
+
+/* ! Classes */
+
+
+/* ?Class Structure Plan */
+
+/* ? header & sidebar & conent */
+/* ? sidebar>calendar & information */
+
+.header {
+    width: 100%;
+}
+
+.sidebar {
+    flex: 1 1 20rem;
+    position: sticky;
+    right: var(--offset);
+    border: 3px solid var(--clr-dark);
+    gap: 5rem;
+    height: 100%;
+}
+
+.calendar {
+    max-height: 50%;
+    overflow-y: auto;
+    /* border: 3px solid var(--clr-dark); */
+
+}
+
+.information {
+    max-height: 50%;
+    overflow-y: auto;
+    /* border: 3px solid var(--clr-dark); */
+}
+
+.content {
+    flex: 99999 1 15rem;
+    /* font-size: clamp(0.7rem, 1.2rem, 2rem);  */
+}
