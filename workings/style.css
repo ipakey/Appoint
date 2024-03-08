@@ -1,0 +1,546 @@
+/* ! Global Settings */
+
+:root {
+    --cream: hsla(66, 68%, 89%, 1);
+    --xanthous: rgba(255, 188, 66, 1);
+    --raspberry: rgba(216, 17, 89, 1);
+    --light-green: rgba(129, 233, 121, 1);
+    --fern-green: hsla(87, 27%, 37%, 1);
+    --english-violet: hsla(308, 22%, 26%, 0.8);
+    --plum-web: rgba(232, 153, 220, 1);
+    --desert-sand: hsla(27, 56%, 76%, 1);
+
+    --dim-gray: hsla(268, 7%, 45%, 1);
+    --ice-blue: rgba(157, 247, 229, 1);
+    --working-blue: rgb(95, 155, 186, 0.7);
+    --dark-blue: rgb(9, 89, 129);
+
+    --clr-red: var(--raspberry);
+    --clr-green: var(--light-green);
+    --clr-amber: var(--xanthous);
+
+    --clr-background: var(--working-blue);
+    --clr-border: var(--desert-sand);
+    --clr-darklight: var(--english-violet);
+    --clr-text: var(--cream);
+    --clr-text-op: var(--light-green);
+    --clr-lowlight: var(--english-violet);
+    --clr-highlight: var(--plum-web);
+    --clr-darkest: #000;
+    --clr-darker: var(--dim-gray);
+    --clr-dark: var(--fern-green);
+
+
+    --fnt-titles: 'Jost', sa-fnt-hightlight;
+    --fnt-text: 'Merienda', cursive;
+    --fnt-hightlight1: 'Dancing Script', cursive;
+    --fnt-hightlight2: 'Amatic SC', cursive;
+
+    font-size: 28px;
+    height: 100%;
+    --offset: 80%;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--clr-background);
+    color: var(--clr-text);
+}
+
+
+/* ! Page Parts */
+
+body {
+    height: 100%;
+    font-family: var(--fnt-text);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    color: var(--clr-highlight);
+    background-color: var(--clr-dark);
+
+}
+
+h1 {
+    font-family: var(--fnt-hightlight1);
+    color: var(--plum-web);
+    font-size: 2.5rem;
+    background-color: inherit;
+    margin: auto;
+    justify-content: center;
+}
+
+h2 {
+    font-family: var(--fnt-hightlight1);
+    color: var(--clr-text);
+    font-size: 2rem;
+    background-color: inherit;
+    margin: auto;
+    margin-bottom: 1.5rem;
+}
+
+h4 {
+    font-size: 0.5rem;
+    color: inherit;
+    background-color: inherit;
+    vertical-align: baseline;
+}
+
+footer {
+    position: sticky;
+    top: 95%;
+}
+
+main {
+    border: 3px solid var(--clr-darkest);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 1rem;
+    margin-inline: auto;
+    padding: 1rem;
+    width: min(60rem, 100%);
+}
+
+
+
+/* ! Classes */
+
+
+/* ?Class Structure Plan */
+
+/* ? header > container & sidebar*/
+/* ? container>calendar */
+/* ? sidebar > booking form & bookings */
+
+.container-calendar {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 60%;
+    background-color: var(--clr-dark);
+}
+
+.sidebar {
+    flex: 1 1 20rem;
+    position: sticky;
+    right: var(--offset);
+    border: 3px solid var(--clr-border);
+    background-color: var(--clr-lowlight);
+    border-radius: 3.8rem;
+    gap: 5rem;
+    height: 100%;
+}
+
+.sidebar>h3 {
+    padding-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.calendar {
+    max-height: 50%;
+    overflow-y: auto;
+    border: 3px solid var(--clr-dark);
+
+}
+
+.information {
+    max-height: 50%;
+    overflow-y: auto;
+    border: 3px solid var(--clr-dark);
+}
+
+.content {
+    flex: 99999 1 15rem;
+    /* font-size: clamp(0.7rem, 1.2rem, 2rem);  */
+}
+
+h3 {
+    /* background-color: antiquewhite; */
+    margin-block-start: 0.3rem;
+    margin-block-end: 0.3rem;
+}
+
+h3 .closed {
+    background-color: var(--clr-lowlight);
+}
+
+h3 .today,
+.today {
+    background-color: var(--clr-amber);
+    border: solid 1px var();
+    border-radius: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.booking-form {
+    background-color: #198754;
+    color: var(--clr-highlight);
+    width: 50%;
+    height: 20vh;
+    border: var(--clr-highlight);
+
+}
+
+.btn-action-yfk {
+    border: 3px solid var(--clr-darker);
+    background-color: var(--clr-background);
+    color: var(--bs-btn-border-color);
+    font-family: var(--fnt-hightlight1);
+    border-radius: 3rem;
+    padding: .8rem 2rem;
+    text-decoration: none;
+    margin: .5rem .5rem .2rem .2rem;
+    box-shadow: inset 0 1px 0 var(--clr-highlight), 0 1px 1px var(--clr-lowlight);
+}
+
+.form-heading {
+    font-family: var(--fnt-titles);
+    font-size: 4rem;
+    padding: 0.4rem 1.5rem 0.4rem 1.5rem;
+    color: var(--clr-highlight);
+}
+
+.form-body {
+    display: flex;
+
+    margin: 0.5rem 1.5rem 0.5rem 1.5;
+    padding: 0.5rem 1.5rem 0.5rem 1.5;
+    line-height: 2;
+    background-color: var(--clr-green);
+    color: var(--clr-lowlight);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+    --bs-gutter-x: .5rem;
+    --bs-gutter-y: 0;
+    width: 25%;
+
+    /* margin-right: 1rem;
+    margin-left: 1rem; */
+}
+
+.btn-action-yfk:hover {
+    opacity: 0.8;
+    /* font-size: 0.9rem; */
+    color: var(--clr-darkest);
+    background-color: var(--clr-amber);
+    /* border-bottom: 2rem solid var(--clr-border); */
+    /* transition: var(--clr-amber) .15s ease-in-out, var(--clr-lowlight) .15s ease-in-out, var(--clr-highlight) .15s ease-in-out, box-shadow .15s ease-in-out; */
+
+}
+
+.empty {
+    background-color: inherit 0.7;
+}
+
+.day {
+    align-items: center;
+}
+
+.btn {
+    /* padding-inline: 1.75rem; */
+    padding: 0.375rem, 1.5rem, 0.375rem 1.5rem;
+    margin: 0.2rem .5rem 0.2rem .5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: inherit;
+
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: 2px solid var(--clr-highlight);
+    border-radius: .5rem;
+    background-color: inheritvar(--clr-background);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .btn {
+        transition: none
+    }
+}
+
+.alert {
+    position: relative;
+    padding: var(--fmt-alert-padding-y) var(--fmt-alert-padding-x);
+    margin-bottom: var(--fmt-alert-margin-bottom);
+    color: var(--fmt-alert-color);
+    background-color: var(--clr-lowlight);
+    border: var(--clr-amber);
+    border-radius: var(--fmt-alert-border-radius);
+}
+
+.alert-success {
+    color: var(--clr-green);
+    background-color: var(--clr-text);
+    border-color: var(--clr-highlight);
+
+}
+
+.btn:hover {
+    color: var(--yfk-btn-hover-color);
+    background-color: var(--yfk-btn-hover-bg);
+    border-color: var(--yfk-btn-hover-border-color)
+}
+
+.btn-dark-yfke {
+    --yf-btn-color: #fff;
+    --yf-btn-bg: #21252941;
+    --yf-btn-border-color: #21252941;
+    --yf-btn-hover-color: #fff;
+    --yf-btn-hover-bg: #424649;
+    --yf-btn-hover-border-color: #373b3e;
+    --yf-btn-focus-shadow-rgb: 66, 70, 73;
+    --yf-btn-active-color: #fff;
+    --yf-btn-active-bg: #4d5154;
+    --yf-btn-active-border-color: #373b3e;
+    --yf-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #21252941;
+    --bs-btn-disabled-border-color: #21252941;
+}
+
+.btn-success-yfke {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #198754;
+    --bs-btn-border-color: #198754;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #157347;
+    --bs-btn-hover-border-color: #146c43;
+    --bs-btn-focus-shadow-rgb: 60, 153, 110;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #146c43;
+    --bs-btn-active-border-color: #13653f;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #198754;
+    --bs-btn-disabled-border-color: #198754;
+
+    --clr-bs-border-color: var(--bs-btn-border-color);
+}
+
+.btn-info-yfke {
+    color: var(--clr-bs-border-color);
+    background-color: var(--clr-background);
+    border-color: var(--clr-border);
+
+}
+
+.btn-info {
+    background-color: transparent;
+    text-decoration: none;
+    color: var(--clr-bs-border-color);
+}
+
+.btn-info-yfke:hover {
+    color: var(--dark-blue);
+    background-color: #31d2f2;
+    border-color: var(--clr-border);
+    box-shadow: inset 0 6px 20px var(--dark-blue);
+}
+
+.btn-info-yfke:active {
+
+    color: #000;
+    background-color: #3dd5f3;
+    border-color: var(--clr-border);
+    text-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+btn-info-yfke:disabled {
+    color: #000;
+    background: #0dcaf0;
+    border-color: #0dcaf0
+}
+
+.table {
+    --bs-table-color-type: initial;
+    --bs-table-bg-type: initial;
+    --bs-table-color-state: initial;
+    --bs-table-bg-state: initial;
+    width: 100%;
+    margin-bottom: 1rem;
+    vertical-align: top;
+    border-color: var(--bs-table-border-color)
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width:802px) and (max-device-width: 1000px) {
+
+    /* Force table to not be like table anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: inline-block;
+    }
+
+    tbody,
+
+    tfoot,
+    th,
+    thead,
+    tr {
+        border-color: inherit;
+        border-style: solid;
+        border-width: 1;
+        width: 100%;
+    }
+
+    table {
+        display: table !important;
+        caption-side: bottom;
+        border-collapse: collapse;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        --yfk-table-color: #fff;
+        --yfk-table-bg: #212529;
+        --yfk-table-border-color: #4d5154;
+        --yfk-table-striped-bg: #2c3034;
+        --yfk-table-striped-color: #fff;
+        --yfk-table-active-bg: #373b3e;
+        --yfk-table-active-color: #fff;
+        --yfk-table-hover-bg: #323539;
+        --yfk-table-hover-color: #fff;
+        color: var(--yfk-table-color);
+        border-color: var(--yfk-table-border-color)
+    }
+
+    .empty {
+        display: none;
+    }
+
+    /* Hide table headers (but not dispaly none for accessibility) */
+    /* th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+
+    } */
+
+    tr {
+        border: 1px solid var(--clr-border);
+    }
+
+    td {
+        /* Behave like a row */
+        border: none;
+        border-bottom: 1px solid var(--clr-border);
+        position: relative;
+        /* padding-left: 50%; */
+    }
+
+    /* Label the data */
+    td:nth-of-type(1):before {
+        content: "Sunday";
+    }
+
+    td:nth-of-type(2):before {
+        content: "Monday";
+    }
+
+    td:nth-of-type(3):before {
+        content: "Tueday";
+    }
+
+    td:nth-of-type(4):before {
+        content: "Wednesday";
+    }
+
+    td:nth-of-type(5):before {
+        content: "Thusday";
+    }
+
+    td:nth-of-type(6):before {
+        content: "Friday";
+    }
+
+    td:nth-of-type(7):before {
+        content: "Satday";
+    }
+}
+
+/* Smartphones (portrait and landscape) */
+@media only screen and (min-device-width:320px) and (max-device-width: 480px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* ipads (portrait and landscape) */
+
+
+@media (min-width:641px) {
+    table {
+        table-layout: fixed;
+    }
+
+    td {
+        width: auto;
+    }
+}
+
+.row {
+    margin-top: 20px;
+    flex-direction: row;
+}
+
+.container-bookings {
+    min-width: 30%;
+    /* width: auto; */
+    border-radius: 5rem;
+    background-color: var(--clr-text);
+}
+
+
+.container-page {
+    display: flex;
+    width: 100%;
+    background-color: --clr-dark;
+}
+
+
+/* ? Overwrite Bootstrap */
+.table>:not(caption)>*>* {
+    padding: .5rem .5rem;
+    color: inherit;
+    background-color: inherit;
+    border-bottom-width: inherit;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg)))
+}
+
+.col-md {
+    flex: 0 0 auto;
+    width: 100%
+}
+
+.form-group {
+    display: flex;
+    flex-flow: row wrap;
+    font-family: inherit;
+}
+
+/* .container-booking-form .div {
+    display: inline-flexbox;
+} */
+
+.container-booking-form .column {
+    display: inline;
+}

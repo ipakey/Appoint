@@ -506,7 +506,9 @@ select:disabled {
 [type=reset],
 [type=submit],
 button {
-    -webkit-appearance: button
+    -webkit-appearance: button;
+    appearance: button;
+
 }
 
 [type=button]:not(:disabled),
@@ -567,6 +569,7 @@ legend+* {
 
 [type=search] {
     -webkit-appearance: textfield;
+    appearance: textfield;
     outline-offset: -2px
 }
 
@@ -585,7 +588,9 @@ legend+* {
 
 ::file-selector-button {
     font: inherit;
-    -webkit-appearance: button
+    -webkit-appearance: button;
+    appearance: button;
+
 }
 
 output {
@@ -2741,8 +2746,8 @@ textarea.form-control-lg {
     background-size: contain;
     border: var(--bs-border-width) solid var(--bs-border-color);
     -webkit-print-color-adjust: exact;
-    color-adjust: exact;
-    print-color-adjust: exact
+    /* color-adjust: exact; */
+    print-color-adjust: exact;
 }
 
 .form-check-input[type=checkbox] {
