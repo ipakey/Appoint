@@ -44,7 +44,7 @@ function timeslots($duration, $cleanup, $start, $end)
         if ($endPeriod > $end) {
             break;
         }
-        $slots[] = $intStart->format("H:iA") . "-" . $endPeriod->format("H:iA");
+        $slots[] = $intStart->format("H:ia") . "-" . $endPeriod->format("H:ia");
     }
     return $slots;
 }
@@ -59,6 +59,7 @@ function timeslots($duration, $cleanup, $start, $end)
 
 <body>
     <div class="container container-booking-form ">
+
         <center>
             <h2 class="form-heading text-center">
                 Book for <?php echo date('d F Y', strtotime($date)); ?></h2>
@@ -67,16 +68,20 @@ function timeslots($duration, $cleanup, $start, $end)
 
         <div class="form-body">
             <div class="row">
-                <?php $timeslots = timeslots($duration, $cleanup, $start, $end);
+                <?php $timeslots = timeslots($duration, $cleanup, $start, $end); ?>
+
+
+                <?php
                 foreach ($timeslots as $ts) {
                 ?>
-                    <div class="form-group">
-                        <button class="btn btn-success book" data-timeslot="<?php echo $ts; ?>"><?php echo $ts; ?></button>
-
+                    <div class="col-md-12">
+                        <div class="btn btn-action-yfke book" data-timeslot="<?php echo $ts; ?>"><?php echo $ts; ?>
+                        </div>
                     </div>
+                <?php } ?>
             </div>
-        <?php } ?>
         </div>
+    </div>
     </div>
 
     <div id="myModal" class="modal fade" role="dialog">
@@ -84,8 +89,8 @@ function timeslots($duration, $cleanup, $start, $end)
             <!-- Modal content -->
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Booking<span id="slot"></span></h4>
+                    <button type="button" class="close btn btn-close" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title">Booking<span id="slot"></span></h3>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -93,64 +98,72 @@ function timeslots($duration, $cleanup, $start, $end)
                             <form action="" method="post">
                                 <div class="form-group">
                                     <label for="">Timeslot</label>
-                                    <input required="text" readonly name="timeslot" id="timeslot" class="form-control" />
+                                    <input readonly type="text" name="timeslot" id="timeslot">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Name</label>
-                                    <input required type="text" readonly name="name" class="form-control" />
+                                    <input readonly type="text" name="name" id="name">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Student</label>
-                                    <input required type="text" readonly name="student" class="form-control" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Email</label>
-                                    <input required type="text" readonly name="email" class="form-control" />
+                                    <input readonly type="text" name="student" id="student">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Subject</label>
-                                    <input required type="text" readonly name="subject" class="form-control" />
+                                    <input readonly type="text" name="subject" id="subject">
                                 </div>
-                                <div class="form-group">
-                                    <label for="">Type of class</label>
-                                    <input required type="text" readonly name="grpInd" class="form-control" />
+                                <div class="form-type-group">
+                                    <div class="form-group">
+                                        <label for="type">Individual </label>
+                                        <input readonly type="radio" name="indGroup" id="indGroup" value="I">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="type">Group</label>
+                                        <input readonly type="radio" name="indGroup" id="indGroup" value="G">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="">Payment method</label>
-                                    <input required type="text" readonly name="paid" class="form-control" />
-                                </div>
-                                <div class="form-group pull-right">
-                                    <button class="btn btn-primary" type="submit" name="submit">Submit</button>
+                                <div class="form-type-group">
+                                    <div class="form-group">
+                                        <label for="">Online</label>
+                                        <input readonly type="radio" name="location" id="location" value="OL">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">The Den</label>
+                                        <input readonly type="radio" name="location" id="location" value="Dn">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Your place</label>
+                                        <input readonly type="radio" name="location" id="location" value="Aw">
+                                    </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="modal-footer">
-                    <h3>Modal Footer</h3>
-                </div> -->
             </div>
+
         </div>
 
-    </div>
 
+        <footer>
+            <?php require_once 'footer.php'; ?>
 
-    <footer>
-        <?php require_once 'footer.php'; ?>
-
-    </footer>
+        </footer>
 
 </body>
 
 </html>
-<script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<!-- <script type="text/javascript">
     $('.book').click(function() {
-        var timeslot = $(this).attr('data-timeslot');
+        var timeslot = $(this).attr("data-timeslot");
         $('#slot').html(timeslot);
         $('#timeslot').val(timeslot);
         $('#myModal').modal('show');
     })
-</script>
+</script> -->
 </body>
 
 </html>

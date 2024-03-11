@@ -1,0 +1,131 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+.comic-neue-light {
+  font-family: "Comic Neue", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.comic-neue-light-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.comic-neue-regular {
+  font-family: "Comic Neue", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.comic-neue-regular-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.comic-neue-bold {
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.comic-neue-bold-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.jost-<uniquifier> {
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.bad-script-regular {
+  font-family: "Bad Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
