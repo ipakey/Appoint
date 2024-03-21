@@ -2,8 +2,6 @@
 
 function build_calendar($month, $year)
 {
-
-
     $mysqli = new mysqli('localhost', 'root', '', 'bookingcalendar');
     $stmt = $mysqli->prepare('select * from bookings where MONTH(date)=? AND YEAR(date)=?');
     $stmt->bind_param('ss', $month, $year);
@@ -29,6 +27,7 @@ function build_calendar($month, $year)
 
     //Create the table tag opener and day headers
     $dateToday = date('Y-m-d');
+    echo print_r($dateToday . ": ");
 
     $calendar = '';
 
@@ -93,13 +92,13 @@ function build_calendar($month, $year)
         // $p = $bookings[0];
         // echo "</br> " . $p . " ";
         if ($date <= date('Y-m-d')) {
-            $calendar .= "<h3 class='$today btn btn-dark-yfke'>$currentDay</br>N/A</h3></td>";
-            // } elseif (in_array($date, $bookings)) {
-            //     $calendar .= "<h4 class='$today btn btn-booking-yfke'>$currentDay</br><a class='btn-info'href='./workings/book.php?date=" . $date . "'>Book</a></h3></td>";
-            // } elseif (in_array($date, $bookings)) {
-            //     $calendar .= "<h3 class='$today btn btn-danger-yfke'>$currentDay</br>Full</></h3></td>";
+            $calendar .= "<h3 class='$today btn-info btn disabled'>$currentDay</br>N/A</h3></td>";
+        } elseif (in_array($date, $bookings)) {
+            $calendar .= "<h4 class='$today btn btn-booking-yfke'>$currentDay</br><a class='btn-info'href='./workings/book.php?date=" . $date . "'>Book</a></h3></td>";
+        } elseif (in_array($date, $bookings)) {
+            $calendar .= "<h3 class='$today btn btn-info btn'>$currentDay</br><a href='./workings/book.php?date=" . $date . "' class='btn-info'>Work</></h3></td>";
         } else {
-            $calendar .= "<h3 class='$today btn btn-info-yfke'> $currentDay </br><a href='./workings/book.php?date=" . $date . "' class='btn-info'>Book  </a></h3></td>";
+            $calendar .= "<h3 class='$today btn btn-info'> $currentDay </br><a href='./workings/book.php?date=" . $date . "' class='btn-info'>Book  </a></h3></td>";
         }
 
 

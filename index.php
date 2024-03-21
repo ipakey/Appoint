@@ -1,5 +1,6 @@
 <?php
 include 'workings/build_calendar.php';
+include 'workings/book.php';
 ?>
 
 
@@ -50,15 +51,36 @@ include 'workings/build_calendar.php';
         </div>
 
         <div class="container-bookings">
-            <div class="sidebar">
-                <h3 class="sidebar-bookings">
-                    <center><?php echo ("  ** " . $day . " : " . $month . " : " . $year . " <br> timetable for <br> User Name:  **");
-                            ?></center>
-                </h3>
+            <?php
+
+            echo retrieveBookings($month, $year, $day);
+            // bookingForm($month, $year, $day);
+            // echo book($month, ' - ', $year, ' - ', $day)
+            ?><div class="form-body">
+                <div class="row">
+                    <div class="message">
+                        <?php echo isset($msg) ? $msg : ""; ?>
+                    </div>
+
+                    <?php
+                    // echo $dat0;
+                    $timeslots = timeslots($duration, $cleanup, $start, $end, $maxGroup); ?>
+
+
+                    <?php
+                    foreach ($timeslots as $ts) {
+                    ?>
+                        <div class="col-md-4">
+                            <div class="btn-action-yfke book" data-timeslot="<?php echo $ts['slot']; ?>"><?php echo $ts['slot']; ?>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
             </div>
 
-
         </div>
+
+
     </div>
 
     <footer>
